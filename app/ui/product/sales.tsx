@@ -6,9 +6,9 @@ export default function ProductSales({ data }: {
   data: ProductData;
 }) {
   return (
-    <div className="flex flex-col w-full h-screen" aria-label="Product Sales">
-      <SalesGraph />
-      <SalesTable />
+    <div className="flex flex-col w-full h-full" aria-label="Product Sales">
+      <SalesGraph sales={data.sales} />
+      <SalesTable sales={data.sales} />
     </div>
   );
 }

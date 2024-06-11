@@ -24,7 +24,7 @@ export default function ProductOverview({
         <h2 className="text-center text-2xl py-2">
           {productTitle}
         </h2>
-        <p className="text-center text-slate-300 py-2">
+        <p className="text-center text-slate-400 py-2">
           {productSubtitle}
         </p>
       </div>

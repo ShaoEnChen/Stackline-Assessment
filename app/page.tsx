@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/app/ui/nav/navbar";
 import ProductDetails from "@/app/ui/product/details";
 import ProductSales from "@/app/ui/product/sales";
-import fetchProductData from "@/app/lib/data";
+import { fetchProductData } from "@/app/lib/data";
 
 export default function Home() {
   const [productId, setProductId] = useState("B007TIE0GQ")
@@ -11,7 +11,6 @@ export default function Home() {
 
   useEffect(() => {
     fetchProductData(productId)
-      .then((res) => res.json())
       .then((data) => setProductData(data));
   }, [productId]);
 
@@ -26,7 +25,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <Navbar />
-      <div className="flex flex-row h-screen justify-between mt-48 px-6">
+      <div className="flex flex-row justify-between mt-48 px-6">
         <ProductDetails data={productData} />
         <ProductSales data={productData} />
       </div>

@@ -1,12 +1,20 @@
 import Image from "next/image";
 
-export default function ProductOverview() {
+export default function ProductOverview({
+  imagePath,
+  productTitle,
+  productSubtitle
+}: {
+  imagePath: string;
+  productTitle: string;
+  productSubtitle: string;
+}) {
   return (
     <div className="flex flex-col px-12 py-6">
       <div className="flex justify-center items-center mb-6">
         <Image
-          src="/images/B007TIE0GQ.webp"
-          alt="NutriBullet NBR-1201 Product Image"
+          src={imagePath}
+          alt={productTitle}
           width={300}
           height={193}
           priority
@@ -14,10 +22,10 @@ export default function ProductOverview() {
       </div>
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-center text-2xl py-2">
-          Shark Ninja
+          {productTitle}
         </h2>
         <p className="text-center text-slate-300 py-2">
-          Magic Bullet NutriBullet 12-Piece High-Speed Blender/Mixer System
+          {productSubtitle}
         </p>
       </div>
     </div>
